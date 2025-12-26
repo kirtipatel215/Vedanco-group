@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 // Types
@@ -66,7 +66,7 @@ function App() {
         )}
 
         {view === ViewState.ABOUT && (
-            <AboutPage onBack={() => setView(ViewState.HOME)} targetId={targetId} />
+            <AboutPage targetId={targetId} />
         )}
 
         {view === ViewState.CAREERS && (
