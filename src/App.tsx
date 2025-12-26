@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
@@ -27,7 +26,10 @@ function App() {
   const [targetId, setTargetId] = useState<string | null>(null);
   const [introFinished, setIntroFinished] = useState(false);
 
-  const handleViewChange = (newView: ViewState, newTargetId: string | null = null) => {
+  const handleViewChange = (
+    newView: ViewState,
+    newTargetId: string | null = null
+  ) => {
     setView(newView);
     setTargetId(newTargetId);
   };
@@ -35,50 +37,65 @@ function App() {
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
       <CustomCursor />
-      
-      <Navbar currentView={view} onChangeView={(v, id) => handleViewChange(v, id)} show={introFinished} />
-      
+
+      <Navbar
+        currentView={view}
+        onChangeView={(v, id) => handleViewChange(v, id)}
+        show={introFinished}
+      />
+
       {view === ViewState.HOME && introFinished && <SideNavigation />}
-      
+
       <AnimatePresence>
-        {!introFinished && <IntroAnimation onComplete={() => setIntroFinished(true)} />}
+        {!introFinished && (
+          <IntroAnimation onComplete={() => setIntroFinished(true)} />
+        )}
       </AnimatePresence>
 
       <main>
         {view === ViewState.HOME && (
-            <Home 
-                introFinished={introFinished} 
-                setView={setView} 
-                handleViewChange={handleViewChange} 
-            />
+          <Home
+            introFinished={introFinished}
+            setView={setView}
+            handleViewChange={handleViewChange}
+          />
         )}
-        
+
         {view === ViewState.BUSINESS && (
-            <BusinessPage onBack={() => setView(ViewState.HOME)} targetId={targetId} />
+          <BusinessPage
+            onBack={() => setView(ViewState.HOME)}
+            targetId={targetId}
+          />
         )}
 
         {view === ViewState.PORTFOLIO && (
-            <PortfolioPage onBack={() => setView(ViewState.HOME)} />
+          <PortfolioPage onBack={() => setView(ViewState.HOME)} />
         )}
 
         {view === ViewState.SOLUTIONS && (
-            <SolutionsPage onBack={() => setView(ViewState.HOME)} targetId={targetId} />
+          <SolutionsPage
+            onBack={() => setView(ViewState.HOME)}
+            targetId={targetId}
+          />
         )}
 
         {view === ViewState.ABOUT && (
-            <AboutPage targetId={targetId} />
+          <AboutPage targetId={targetId} />
         )}
 
         {view === ViewState.CAREERS && (
-            <CareersPage onBack={() => setView(ViewState.HOME)} />
+          <CareersPage onBack={() => setView(ViewState.HOME)} />
         )}
 
         {view === ViewState.CONTACT && (
-            <ContactPage onBack={() => setView(ViewState.HOME)} />
+          <ContactPage onBack={() => setView(ViewState.HOME)} />
         )}
 
         {view === ViewState.LEGAL && (
-            <LegalPage onBack={() => setView(ViewState.HOME)} targetId={targetId} />
+          <LegalPage
+            onBack={() => setView(ViewState.HOME)}
+            targetId={targetId}
+          />
         )}
       </main>
 
