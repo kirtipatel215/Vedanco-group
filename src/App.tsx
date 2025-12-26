@@ -80,7 +80,10 @@ function App() {
         )}
 
         {view === ViewState.ABOUT && (
-          <AboutPage targetId={targetId} />
+          <AboutPage 
+            onBack={() => setView(ViewState.HOME)}
+            targetId={targetId}
+          />
         )}
 
         {view === ViewState.CAREERS && (
