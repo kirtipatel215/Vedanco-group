@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: #1a1a1a;
+  overflow-x: hidden;
+  cursor: none; /* Custom cursor */
+}
+
+/* Fallback for touch devices */
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.clip-image-slant {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Vedanco Group Corporate Platform",
+  "description": "A premium, multi-industry corporate website featuring AI-powered tools, cinematic storytelling, and 3D visualizations for Vedanco Group.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
