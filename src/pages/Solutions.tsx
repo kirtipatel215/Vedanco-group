@@ -52,7 +52,7 @@ const services = [
   }
 ];
 
-const SolutionsPage: React.FC<SolutionsPageProps> = ({ onBack, targetId }) => {
+const SolutionsPage: React.FC<SolutionsPageProps> = ({ targetId }) => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: containerRef });
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 200]);

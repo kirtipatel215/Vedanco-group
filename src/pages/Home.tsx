@@ -46,7 +46,6 @@ const BusinessItem: React.FC<BusinessItemProps> = ({ biz, index, onExplore }) =>
     
     // Smooth parallax for images
     const imageY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
-    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
     return (
       <motion.div 

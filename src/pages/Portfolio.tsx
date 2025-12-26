@@ -115,7 +115,7 @@ const FeaturedProject: React.FC<{ project: typeof featuredProjects[0], index: nu
     );
   };
 
-const PortfolioPage: React.FC<PortfolioPageProps> = ({ onBack }) => {
+const PortfolioPage: React.FC<PortfolioPageProps> = ({ }) => {
   const containerRef = useRef(null);
   
   const Hero = () => {

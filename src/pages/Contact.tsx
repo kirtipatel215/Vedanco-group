@@ -39,7 +39,7 @@ const offices = [
   }
 ];
 
-const ContactPage: React.FC<ContactPageProps> = ({ onBack }) => {
+const ContactPage: React.FC<ContactPageProps> = ({ }) => {
   const [formData, setFormData] = useState({
     FirstName: '',
     LastName: '',
@@ -271,16 +271,23 @@ const ContactPage: React.FC<ContactPageProps> = ({ onBack }) => {
                                 <>
                                     <p className="text-slate-500 text-sm mb-4 leading-relaxed">{office.address}</p>
                                     <div className="space-y-1">
-                                        <a 
-                                          href={`https://wa.me/${office.phone.replace(/[^0-9]/g, '')}`} 
-                                          target="_blank" 
-                                          rel="noopener noreferrer"
-                                          className="text-sm font-medium text-slate-700 hover:text-green-600 transition-colors flex items-center gap-2 group w-fit"
-                                        >
-                                          <span>📞</span> 
-                                          <span>{office.phone}</span>
-                                          <span className="text-[10px] bg-green-50 text-green-700 px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity">WA</span>
-                                        </a>
+                                        {office.phone ? (
+                                          <a 
+                                            href={`https://wa.me/${office.phone.replace(/[^0-9]/g, '')}`} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="text-sm font-medium text-slate-700 hover:text-green-600 transition-colors flex items-center gap-2 group w-fit"
+                                          >
+                                            <span>📞</span> 
+                                            <span>{office.phone}</span>
+                                            <span className="text-[10px] bg-green-50 text-green-700 px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity">WA</span>
+                                          </a>
+                                        ) : (
+                                          <div className="text-sm font-medium text-slate-500 flex items-center gap-2">
+                                            <span>📞</span>
+                                            <span>Phone unavailable</span>
+                                          </div>
+                                        )}
                                         <p className="text-sm font-medium text-slate-700 flex items-center gap-2"><span>✉️</span> {office.email}</p>
                                     </div>
                                 </>

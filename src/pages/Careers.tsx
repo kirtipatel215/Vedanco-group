@@ -13,7 +13,7 @@ const departments = [
   { title: "Global Operations", desc: "Logistics experts and Project Managers ensuring execution across 12 countries.", icon: "🌍" }
 ];
 
-const CareersPage: React.FC<CareersPageProps> = ({ onBack }) => {
+const CareersPage: React.FC<CareersPageProps> = ({ }) => {
   return (
     <div className="min-h-screen bg-white pt-20">
        <section className="relative py-32 bg-slate-900 text-white overflow-hidden">

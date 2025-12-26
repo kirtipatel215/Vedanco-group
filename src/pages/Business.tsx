@@ -287,7 +287,7 @@ const DomainStorySection: React.FC<{ domain: typeof domains[0], index: number, i
   );
 };
 
-const BusinessPage: React.FC<BusinessPageProps> = ({ onBack, targetId }) => {
+const BusinessPage: React.FC<BusinessPageProps> = ({ targetId }) => {
   const containerRef = useRef(null);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
